@@ -137,7 +137,6 @@ unset __conda_setup
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12/lib64/
 
 #CVAT
-export CVAT_HOST=10.0.101.22
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
