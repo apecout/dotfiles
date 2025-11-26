@@ -161,3 +161,5 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias mvm='python ~/python_ws/sandbox/mvm.py'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
