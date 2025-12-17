@@ -1,0 +1,42 @@
+{
+    "b8e508c9-fc9a-46f7-9456-d9ff355f0ad5": {
+        "id": "b8e508c9-fc9a-46f7-9456-d9ff355f0ad5",
+        "name": "Google Search",
+        "keyword": "g",
+        "cmd": "https://google.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1756211503.5663545
+    },
+    "dc7b12c4-a3ec-4f91-99f3-c72db5584cf5": {
+        "id": "dc7b12c4-a3ec-4f91-99f3-c72db5584cf5",
+        "name": "Stack Overflow",
+        "keyword": "so",
+        "cmd": "https://stackoverflow.com/search?q=%s",
+        "icon": "/usr/share/ulauncher/media/stackoverflow-icon.svg",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1756211503.5664299
+    },
+    "89bee3a2-041c-4b44-bac6-57ceed411cca": {
+        "id": "89bee3a2-041c-4b44-bac6-57ceed411cca",
+        "name": "Wikipedia",
+        "keyword": "wiki",
+        "cmd": "https://fr.wikipedia.org/wiki/%s",
+        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
+        "is_default_search": true,
+        "run_without_argument": false,
+        "added": 1756211503.566488
+    },
+    "a20f5c65-d806-47c1-b2d7-6a72dcac05cb": {
+        "id": "a20f5c65-d806-47c1-b2d7-6a72dcac05cb",
+        "name": "Le Chat - Mistral AI",
+        "keyword": "chat",
+        "cmd": "https://chat.mistral.ai/chat",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1756211559.5763435
+    }
+}
