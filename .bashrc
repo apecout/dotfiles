@@ -116,25 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/apecout/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/apecout/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/apecout/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/apecout/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 . "$HOME/.cargo/env"
-
-# CUDA 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12/lib64/
 
 #CVAT
 export CVAT_HOST=10.0.101.22
@@ -158,8 +140,15 @@ eval "$(keychain --eval --quiet ~/.ssh/i3_12v1)"
 
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-alias mvm='python ~/python_ws/sandbox/mvm.py'
+alias mvm='python3 ~/python_ws/sandbox/mvm.py'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+export CUDA_HOME=/usr/local/cuda-12.5
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$CUDA_HOME/lib64/pkgconfig:$PKG_CONFIG_PATH
+
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH

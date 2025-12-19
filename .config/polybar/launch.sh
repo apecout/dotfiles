@@ -9,9 +9,9 @@ polybar-msg cmd quit
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     echo "---" | tee -a /tmp/polybar${MONITOR}.log
-    MONITOR=$m polybar dracula --config=${HOME}/.config/polybar/dracula.ini 2>&1 | tee -a /tmp/polybar_dracula.log & disown &
+    MONITOR=$m polybar config --config=${HOME}/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar_config.log & disown &
   done
 else
-  polybar dracula --config=${HOME}/.config/polybar/dracula.ini 2>&1 | tee -a /tmp/polybar_dracula.log & disown &
+  polybar config --config=${HOME}/.config/polybar/config.ini 2>&1 | tee -a /tmp/polybar_config.log & disown &
 fi
 echo "Bars launched..."

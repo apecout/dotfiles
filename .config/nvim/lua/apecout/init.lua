@@ -21,3 +21,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+-- GruvBox
+vim.cmd("colorscheme gruvbox")
+
