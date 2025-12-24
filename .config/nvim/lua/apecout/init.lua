@@ -21,6 +21,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
--- GruvBox
-vim.cmd("colorscheme gruvbox")
-
+:hi Normal guibg=NONE ctermbg=NONE
+:hi EndOfBuffer guibg=NONE ctermbg=NONE

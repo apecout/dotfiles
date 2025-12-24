@@ -2,22 +2,22 @@
     "com.github.freisatz.ulauncher-firefox-launcher": {
         "id": "com.github.freisatz.ulauncher-firefox-launcher",
         "url": "https://github.com/freisatz/ulauncher-firefox-launcher/",
-        "updated_at": "2025-09-11T11:30:46.058259",
+        "updated_at": "2025-12-17T21:13:19.130407",
         "last_commit": "1dc79cbaba76998b144881028bbe3567218d8836",
         "last_commit_time": "2025-04-13T09:51:26"
     },
-    "com.github.brpaz.ulauncher-vscode-projects": {
-        "id": "com.github.brpaz.ulauncher-vscode-projects",
-        "url": "https://github.com/brpaz/ulauncher-vscode-projects",
-        "updated_at": "2025-09-16T14:08:04.282280",
-        "last_commit": "e8d17a2d96d75a0be26773f8f4855afd0045c94f",
-        "last_commit_time": "2025-02-15T15:47:41"
+    "com.github.jack5github.ulauncher-steam": {
+        "id": "com.github.jack5github.ulauncher-steam",
+        "url": "https://github.com/jack5github/ulauncher-steam",
+        "updated_at": "2025-12-17T21:23:15.609714",
+        "last_commit": "8201b540f2ea955a5e8ce2fa7957b6c08850e3e5",
+        "last_commit_time": "2025-05-23T12:53:07"
     },
-    "com.github.rapha149.ulauncher-deepl": {
-        "id": "com.github.rapha149.ulauncher-deepl",
-        "url": "https://github.com/Rapha149/ulauncher-deepl/",
-        "updated_at": "2025-09-16T14:10:05.388594",
-        "last_commit": "7462c59b1481fae6fbe6ca5ad0491943fbf4b577",
-        "last_commit_time": "2024-12-26T12:02:30"
+    "com.github.friday.ulauncher-clipboard": {
+        "id": "com.github.friday.ulauncher-clipboard",
+        "url": "https://github.com/friday/ulauncher-clipboard.git",
+        "updated_at": "2025-12-21T23:35:16.996763",
+        "last_commit": "73420cf4816f925321db15379c9c981c8f28c6fe",
+        "last_commit_time": "2022-08-03T20:22:13"
     }
 }
