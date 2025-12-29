@@ -24,3 +24,8 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 export EDITOR="nvim"
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+
+eval "$(fzf --bash)"
+# source /usr/share/fzf/key-bindings.bash
+# source /usr/share/fzf/completion.bash
+alias inv='nvim $(fzf --preview="bat --color=always {}")'

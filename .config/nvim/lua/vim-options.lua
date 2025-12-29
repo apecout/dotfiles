@@ -1,8 +1,10 @@
-vim.g.mapleader = " " -- Set leader key before Lazy
- 
-require("apecout.lazy_init")
+vim.cmd("set expandtab")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
+vim.g.mapleader = " "
 
--- Numéros hybrides : absolu pour la ligne actuelle, relatif pour les autres
+-- Numeros de lignes : relatif sauf pour courante
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -21,5 +23,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
-:hi Normal guibg=NONE ctermbg=NONE
-:hi EndOfBuffer guibg=NONE ctermbg=NONE
