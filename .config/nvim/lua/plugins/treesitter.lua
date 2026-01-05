@@ -8,21 +8,7 @@ return {
   config = function()
     require("nvim-treesitter.configs").setup({
       -- Liste des langages à installer
-      ensure_installed = {
-        "lua",
-        "rust",
-        "bash",
-        "c",
-        "cpp",
-        "python",
-        "javascript",
-        "typescript",
-        "json",
-        "yaml",
-        "toml",
-        "markdown",
-        "markdown_inline",
-      },
+      auto_install = true,
       -- Active la coloration syntaxique
       highlight = {
         enable = true,
