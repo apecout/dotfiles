@@ -29,3 +29,6 @@ eval "$(fzf --bash)"
 # source /usr/share/fzf/key-bindings.bash
 # source /usr/share/fzf/completion.bash
 alias inv='nvim $(fzf --preview="bat --color=always {}")'
+. "$HOME/.cargo/env"
+
+alias ftb='flatpak run --env=ELECTRON_OZONE_PLATFORM_HINT=x11 dev.ftb.ftb-app'

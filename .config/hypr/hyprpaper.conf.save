@@ -1,0 +1,18 @@
+preload=/home/antoine/Pictures/wallpapers/pixel_art-wallpaper-1920x1080.jpg
+
+wallpaper {
+  monitor = 
+  path = /home/antoine/Pictures/wallpapers/pixel_art-wallpaper-1920x1080.jpg
+  fit_mode = cover
+}
+
+wallpaper {
+  monitor = DP-1
+  path = /home/antoine/Pictures/wallpapers/pixel_art-wallpaper-1920x1080.jpg
+}
+
+wallpaper {
+  monitor = HDMI-A-1
+  path = /home/antoine/Pictures/wallpapers/pixel_art-wallpaper-1920x1080.jpg
+}
+
