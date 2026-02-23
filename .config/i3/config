@@ -224,8 +224,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # }
 
 # Composition key at start
-exec --no-startup-id setxkbmap custom
-exec --no-startup-id xmodmap ~/.xmodmap
+exec --no-startup-id sh -c "sleep 2 && setxkbmap custom"
+exec --no-startup-id sh -c "sleep 3 && xmodmap ~/.xmodmap"
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
