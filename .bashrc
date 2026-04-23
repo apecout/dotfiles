@@ -170,3 +170,11 @@ unset __conda_setup
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+
+
+# Connexions caméras
+alias inpixal='sudo nmcli connection up "InPixal"'
+alias cambur='sudo nmcli connection up "CamBur"'
+
+alias rmpyc='find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf'
+alias slt="ttysolitaire --no-background-color"
