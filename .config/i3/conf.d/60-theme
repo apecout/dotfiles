@@ -1,0 +1,22 @@
+# class                 border  bground text    indicator child_border
+client.focused          #b16286 #b16286 #ebdbb2 #6272A4   #b16286
+client.focused_inactive #6b3b51 #6b3b51 #ebdbb2 #44475A   #6b3b51
+client.unfocused        #403a35 #403a35 #7c6f64 #665c54   #403a35
+client.urgent           #44475A #FF5555 #ebdbb2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #ebdbb2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+# bar {
+#   colors {
+#     background #282A36
+#     statusline #F8F8F2
+#     separator  #44475A
+#
+#     focused_workspace  #44475A #44475A #F8F8F2
+#     active_workspace   #282A36 #44475A #F8F8F2
+#     inactive_workspace #282A36 #282A36 #BFBFBF
+#     urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#     binding_mode       #FF5555 #FF5555 #F8F8F2
+#   }
+# }

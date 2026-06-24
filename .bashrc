@@ -144,6 +144,8 @@ alias mvm='python3 ~/python_ws/sandbox/mvm.py'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# ----- ENVIRONEMENT -----
+#
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export CUDA_HOME=/usr/local/cuda-12.5
@@ -152,6 +154,12 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$CUDA_HOME/lib64/pkgconfig:$PKG_CONFIG_PATH
 
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+# ----- GO -----
+
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export PATH=$GOPATH/bin:$PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -178,3 +186,6 @@ alias cambur='sudo nmcli connection up "CamBur"'
 
 alias rmpyc='find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf'
 alias slt="ttysolitaire --no-background-color"
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin
