@@ -138,7 +138,7 @@ fi
 
 eval "$(keychain --eval --quiet ~/.ssh/i3_12v1)"
 
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+# alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias mvm='python3 ~/python_ws/sandbox/mvm.py'
 
