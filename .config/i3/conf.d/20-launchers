@@ -1,5 +1,5 @@
 # keybinding to lock screen
-bindsym Control+Mod1+l exec "bash $HOME/.config/i3/lock.sh && xset dpms force off"
+bindsym Control+Mod1+l exec "bash $HOME/.config/i3/lock.sh"
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -19,13 +19,15 @@ bindsym $mod+q kill
 # A more modern dmenu replacement is rofi:
 # bindsym $mod+space exec "rofi -modi drun, run -show drun"
 bindsym $mod+space exec "rofi -show combi -modes combi"
-bindsym $mod+Shift+space "rofi -show calc -modi calc -no-show-match -no-sort"
 # bindsym $mod+space exec "rofi -modes drun,ssh -show drun"
 # bindsym $mod+space exec ""
 # bindsym $mod+space exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+#
+bindsym $mod+Shift+space exec --no-startup-id kitty --class python-repl python3 -i -c "from math import *"
+for_window [class="python-repl"] floating enable, resize set 900 600, move position center
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

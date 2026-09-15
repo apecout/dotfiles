@@ -189,3 +189,6 @@ alias slt="ttysolitaire --no-background-color"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
+
+# UV commands autocompletion
+eval "$(uv generate-shell-completion bash)"

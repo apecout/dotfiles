@@ -13,7 +13,28 @@ blue='#458588'
 cyan='#689d6a'
 green='#98971a'
 
+lock_state_file="${XDG_RUNTIME_DIR:-/tmp}/i3-lock-state"
+
+set_lock_state() {
+  LOCKED="$1"
+  export LOCKED
+  printf 'LOCKED=%s\n' "$LOCKED" > "$lock_state_file"
+
+  if command -v systemctl >/dev/null 2>&1; then
+    systemctl --user set-environment "LOCKED=$LOCKED" >/dev/null 2>&1 || true
+  fi
+
+  if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+    dbus-update-activation-environment "LOCKED=$LOCKED" >/dev/null 2>&1 || true
+  fi
+}
+
+set_lock_state 1
+trap 'set_lock_state 0' EXIT INT TERM
+
 i3lock \
+  --nofork \
+  --color="${background#'#'}$alpha" \
   --insidever-color=$selection$alpha \
   --insidewrong-color=$selection$alpha \
   --inside-color=$selection$alpha \
@@ -33,7 +54,6 @@ i3lock \
   --date-color=$yellow \
   --time-color=$yellow \
   --screen 1 \
-  --blur 1 \
   --clock \
   --indicator \
   --time-str="%H:%M:%S" \
@@ -53,3 +73,13 @@ i3lock \
   --verif-font="DepartureMono Nerd Font Mono" \
   --wrong-font="DepartureMono Nerd Font Mono" \
   --layout-font="DepartureMono Nerd Font Mono" \
+  &
+
+lock_pid=$!
+sleep 1
+
+if kill -0 "$lock_pid" 2>/dev/null; then
+  xset dpms force off
+fi
+
+wait "$lock_pid"
