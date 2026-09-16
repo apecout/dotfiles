@@ -26,8 +26,13 @@ bindsym $mod+space exec "rofi -show combi -modes combi"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 #
+# Floating calculator (Python interpreter)
 bindsym $mod+Shift+space exec --no-startup-id kitty --class python-repl python3 -i -c "from math import *"
 for_window [class="python-repl"] floating enable, resize set 900 600, move position center
+
+# Floating term
+bindsym $mod+Shift+Return exec --no-startup-id kitty --class flating-term
+for_window [class="flating-term"] floating enable, resize set 900 600, move position center
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -46,4 +51,10 @@ bindsym $mod+Shift+e exec i3-nagbar -f "pango:Terminus 12" \
 -B "Reboot" "systemctl reboot" \
 -B "Power off" "systemctl poweroff" \
 
+# Cheat sheet qwerty-lafayette
 bindsym $mod+Shift+y exec --no-startup-id eog "Images/qwerty-lafayette-cheat-sheet.png"
+
+# Dunst notifications
+bindsym $mod+n exec --no-startup-id dunstctl close
+bindsym $mod+Shift+n exec --no-startup-id dunstctl close-all
+ 

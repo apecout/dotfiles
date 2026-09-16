@@ -192,3 +192,11 @@ export PATH=$PATH:~/go/bin
 
 # UV commands autocompletion
 eval "$(uv generate-shell-completion bash)"
+
+# Timer command
+alias timr="timr-tui --work '25:00' --pause '05:00' \
+    --vim on \
+    --reset \
+    --notification on \
+    --auto-switch
+"
