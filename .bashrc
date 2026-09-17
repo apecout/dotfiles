@@ -87,20 +87,11 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -138,12 +129,6 @@ fi
 
 eval "$(keychain --eval --quiet ~/.ssh/i3_12v1)"
 
-# alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-alias mvm='python3 ~/python_ws/sandbox/mvm.py'
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
 # ----- ENVIRONEMENT -----
 #
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
@@ -176,16 +161,15 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/apecout/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/apecout/.fzf/bin"
+fi
+
+eval "$(fzf --bash)"
+
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
-
-
-# Connexions caméras
-alias inpixal='sudo nmcli connection up "InPixal"'
-alias cambur='sudo nmcli connection up "CamBur"'
-
-alias rmpyc='find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf'
-alias slt="ttysolitaire --no-background-color"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
@@ -193,10 +177,15 @@ export PATH=$PATH:~/go/bin
 # UV commands autocompletion
 eval "$(uv generate-shell-completion bash)"
 
-# Timer command
-alias timr="timr-tui --work '25:00' --pause '05:00' \
-    --vim on \
-    --reset \
-    --notification on \
-    --auto-switch
-"
+
+# Yazi cd quit
+function y() {
+	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+	command rm -f -- "$tmp"
+}
+
+export EDITOR=nvim
+export VISUAL=nvim
