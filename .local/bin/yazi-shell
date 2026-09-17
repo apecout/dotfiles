@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+tmp="$(mktemp -t 'yazi-cwd.XXXXXX')"
+trap 'rm -f "$tmp"' EXIT
+
+yazi "$@" --cwd-file="$tmp"
+
+IFS= read -r -d '' cwd < "$tmp"
+
+if [[ -n "$cwd" && -d "$cwd" ]]; then
+    cd -- "$cwd"
+fi
+
+exec bash
