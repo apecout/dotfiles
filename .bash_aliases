@@ -20,3 +20,6 @@ alias timr="timr-tui --work '25:00' --pause '05:00' \
     --notification on \
     --auto-switch \
 "
+
+# cp nvim cargo features template
+alias nvim-cargo-features='cp ~/code/rust/features_nvim.lua ./.nvim.lua'

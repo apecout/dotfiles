@@ -177,7 +177,6 @@ export PATH=$PATH:~/go/bin
 # UV commands autocompletion
 eval "$(uv generate-shell-completion bash)"
 
-
 # Yazi cd quit
 function y() {
 	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
