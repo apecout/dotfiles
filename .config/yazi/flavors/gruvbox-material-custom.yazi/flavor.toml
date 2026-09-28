@@ -1,0 +1,243 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# Couleurs ANSI du terminal 
+# "black" "white" "gray" "darkgray" 
+# "red" "lightred" "green" "lightgreen" 
+# "yellow" "lightyellow" "blue" "lightblue" 
+# "magenta" "lightmagenta" "cyan" "lightcyan" 
+# "reset" 
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "lightblue" }
+
+# Find
+find_keyword = { fg = "yellow", bold = true, italic = true, underline = true }
+find_position = { fg = "lightmagenta", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied = { fg = "lightgreen", bg = "lightgreen" }
+marker_cut = { fg = "lightred", bg = "lightred" }
+marker_marked = { fg = "blue", bg = "blue" }
+marker_selected = { fg = "lightblue", bg = "lightblue" }
+
+# Count
+count_copied = { fg = "black", bg = "lightgreen" }
+count_cut = { fg = "black", bg = "lightred" }
+count_selected = { fg = "black", bg = "lightblue" }
+
+# Border
+border_symbol = "│"
+border_style = { fg = "gray" }
+
+# : }}}
+
+# : Indicator {{{
+
+[indicator]
+parent = { open = "▐", close = "▌", fg = "lightgray", reversed = true }
+current = { open = "▐", close = "▌", fg = "lightgray", reversed = true }
+preview = { open = "▐", close = "▌", fg = "lightgray", reversed = true }
+padding = { open = "▐", close = "▌" }
+
+# : }}}
+
+# : Tabs {{{
+
+[tabs]
+active = { fg = "black", bg = "lightmagenta", bold = true }
+inactive = { fg = "lightmagenta", bg = "reset" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+
+normal_main = { fg = "black", bg = "lightyellow", bold = true }
+normal_alt = { fg = "lightyellow", bg = "black" }
+
+# Select mode
+select_main = { fg = "black", bg = "lightblue", bold = true }
+select_alt = { fg = "lightblue", bg = "black" }
+
+# Unset mode
+unset_main = { fg = "black", bg = "lightred", bold = true }
+unset_alt = { fg = "lightred", bg = "black" }
+
+# : }}}
+
+
+# : Status bar {{{
+
+[status]
+
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_sep = { fg = "white" }
+perm_type = { fg = "lightblue" }
+perm_read = { fg = "yellow" }
+perm_write = { fg = "lightred" }
+perm_exec = { fg = "lightgreen" }
+
+# Progress
+progress_label = { fg = "white", bold = true }
+progress_normal = { fg = "lightgreen", bg = "darkgray" }
+progress_error = { fg = "yellow", bg = "lightred" }
+
+# : }}}
+
+
+# : Pick {{{
+
+[pick]
+border = { fg = "lightblue" }
+active = { fg = "lightmagenta", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border = { fg = "lightgreen" }
+title = { fg = "white" }
+value = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border = { fg = "lightblue" }
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border = { fg = "lightblue" }
+title = {}
+hovered = { fg = "lightmagenta", bold = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+mask = { bg = "black" }
+cand = { fg = "lightcyan" }
+rest = { fg = "gray" }
+desc = { fg = "lightmagenta" }
+separator = "  "
+separator_style = { fg = "darkgray" }
+
+# : }}}
+
+# : Confirm {{{
+
+[confirm]
+border = { fg = "red" }
+title = { fg = "white" }
+
+# : }}}
+
+# : Help {{{
+
+[help]
+on = { fg = "lightcyan" }
+run = { fg = "lightmagenta" }
+hovered = { reversed = true, bold = true }
+footer = { fg = "black", bg = "white" }
+
+# : }}}
+
+
+# : Spotter {{{
+
+[spot]
+border = { fg = "lightblue" }
+title = { fg = "lightblue" }
+tbl_col = { fg = "lightcyan" }
+tbl_cell = { fg = "lightmagenta", bg = "darkgray" }
+
+# : }}}
+
+
+# : Notification {{{
+
+[notify]
+title_info = { fg = "lightgreen" }
+title_warn = { fg = "yellow" }
+title_error = { fg = "lightred" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+	# Image
+	{ mime = "image/*", fg = "yellow" },
+	# Media
+	{ mime = "{audio,video}/*", fg = "yellow" },
+	# Archive
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "lightmagenta" },
+	# Document
+	{ mime = "application/{pdf,doc,rtf}", fg = "lightgreen" },
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "gray" },
+	# Fallback
+	{ url = "*", fg = "white" },
+	{ url = "*/", fg = "lightgreen" },
+]
+
+# : }}}
+
+[icon]
+
+dirs = [
+	{ name = ".config", text = "", fg = "lightmagenta" },
+	{ name = ".git", text = "", fg = "yellow" },
+	{ name = ".github", text = "", fg = "yellow" },
+	{ name = ".npm", text = "", fg = "yellow" },
+	{ name = "Desktop", text = "", fg = "yellow" },
+	{ name = "Development", text = "", fg = "yellow" },
+	{ name = "Documents", text = "", fg = "yellow" },
+	{ name = "Downloads", text = "", fg = "yellow" },
+	{ name = "Library", text = "", fg = "yellow" },
+	{ name = "Movies", text = "", fg = "yellow" },
+	{ name = "Music", text = "", fg = "yellow" },
+	{ name = "Pictures", text = "", fg = "yellow" },
+	{ name = "Public", text = "", fg = "yellow" },
+	{ name = "Videos", text = "", fg = "yellow" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "white" },
+	{ if = "link", text = "", fg = "darkgray" },
+	{ if = "block", text = "", fg = "lightred" },
+	{ if = "char", text = "", fg = "lightred" },
+	{ if = "fifo", text = "", fg = "lightred" },
+	{ if = "sock", text = "", fg = "lightred" },
+	{ if = "sticky", text = "", fg = "lightred" },
+	{ if = "dummy", text = "", fg = "lightred" },
+
+	# Fallback
+	{ if = "dir", text = "", fg = "lightgreen" },
+	{ if = "exec", text = "", fg = "lightred" },
+	{ if = "!dir", text = "", fg = "white" },
+]

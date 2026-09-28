@@ -163,11 +163,13 @@ unset __conda_setup
 
 # Setup fzf
 # ---------
+export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir z zi"
 if [[ ! "$PATH" == */home/apecout/.fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/home/apecout/.fzf/bin"
 fi
 
 eval "$(fzf --bash)"
+eval "$(zoxide init bash)"
 
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 
@@ -188,3 +190,4 @@ function y() {
 
 export EDITOR=nvim
 export VISUAL=nvim
+

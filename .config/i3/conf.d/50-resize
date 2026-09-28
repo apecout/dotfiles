@@ -23,4 +23,4 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+d mode "resize"
+bindsym $mod+r mode "resize"
