@@ -202,7 +202,7 @@ rules = [
 	{ mime = "vfs/{absent,stale}", fg = "gray" },
 	# Fallback
 	{ url = "*", fg = "white" },
-	{ url = "*/", fg = "lightgreen" },
+	{ url = "*/", fg = "white" },
 ]
 
 # : }}}
@@ -237,7 +237,7 @@ conds = [
 	{ if = "dummy", text = "", fg = "lightred" },
 
 	# Fallback
-	{ if = "dir", text = "", fg = "lightgreen" },
+	{ if = "dir", text = "", fg = "yellow" },
 	{ if = "exec", text = "", fg = "lightred" },
 	{ if = "!dir", text = "", fg = "white" },
 ]
